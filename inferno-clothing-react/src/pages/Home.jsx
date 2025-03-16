@@ -1,29 +1,12 @@
 import React, { useState } from 'react'
 import { useEffect, useRef} from 'react'
+import { scrollEffect } from '../common/effects';
 
 const Home = () => {
     const elementsRef = useRef([]);
+    const [renderCategories, setRenderCateogires] = useState(false);
 
-    useEffect(() => {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if(entry.isIntersecting) {
-              entry.target.classList.add("show");
-            }
-            else {
-              //entry.target.classList.remove("show");
-            }
-          });
-        },
-        { threshold: 0 }
-      );
-
-      elementsRef.current.forEach((el) => {
-        if (el) observer.observe(el);
-      });
-      return () => observer.disconnect();
-    }, []);
+    useEffect(scrollEffect.bind(this, elementsRef), [renderCategories, elementsRef]);
 
     const sliderRef = useRef(null);
     const [isDown, setIsDown] = useState(false);
