@@ -1,0 +1,48 @@
+@keyframes promjena_gornje {
+    100% {
+        transform: rotate(45deg); 
+        width: 35px;
+        margin-top: 20px;
+    }
+}
+
+@keyframes promjena_srednje {
+    100% {
+        height: 0px;
+    }
+}
+
+@keyframes promjena_donje {
+    100% {
+        transform: rotate(-45deg); 
+        width: 35px;
+        margin-bottom: 20px;
+    }
+}
+
+@keyframes promjena_kontejnera {
+    100% {
+        margin-left: 42px;
+        margin-right: 8px;
+    }
+}
+
+#rectangle-1 {
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+
+    transition: all 2s ease;
+}
+
+#rectangle-2 {
+    animation-fill-mode: forwards;
+}
+
+#rectangle-3 {
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+#menu-option {
+    animation-fill-mode: forwards;
+}
